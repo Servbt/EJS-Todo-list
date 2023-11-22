@@ -1,0 +1,34 @@
+<body>
+
+  <h1 class="text-center">This is The Title inside the content.ejs file</h1>
+  <form class="text-center" action="/create" method="POST">
+    <label for="title" class="form-label">Todo Title</label>
+    <input class="form-control" type="text" placeholder="Default input" aria-label="default input example" name="title">
+    <label for="content" class="form-label">Example textarea</label>
+    <textarea type="text" class="form-control" id="exampleFormControlTextarea1" rows="10 " required name="content"></textarea>
+    <input class="btn btn-success btn-lg mt-3" type="submit" value="Create Todo">
+  </form>
+
+
+
+  <!--  Below is previous proprietary code, used for reference -->
+  <!-- <form action="/create" method="POST">
+    <label for="title">Todo:</label>
+    <input type="text" id="title" name="title" required>
+    <label for="content">Todo:</label>
+    <input type="text" id="content" name="content" required>
+    <input type="submit" value="Create Todo" class="btn btn-success btn-lg mt-3">
+  </form> -->
+</body>
+
+<!-- Below this line is for the future functionality-->
+<!-- <div class="d-flex justify-content-center">
+      <form action="/create" method="POST">
+      </form>
+      <form action="/todo/code" method="PUT">
+        <input class="btn btn-primary btn-lg mx-2" type="submit" value="update Todo">
+      </form>
+      <form action="/todo/code" method="DELETE">
+        <input class="btn btn-danger btn-lg" type="submit" value="Delete Todo">
+      </form>
+    </div> -->
