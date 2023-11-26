@@ -29,22 +29,26 @@
             <a href="/" class="list-group-item list-group-item-action active" aria-current="true">
                 Link to Todo Create page
             </a>
-            <a href="/allTodos" class="list-group-item list-group-item-action">Link To see all Todos</a>
+            <!-- <a href="/allTodos" class="list-group-item list-group-item-action">Link To see all Todos</a> -->
             <!-- The Code below Loops through the Array passed and Makes titles/links for each Todo -->
             <% if (locals.todoList) {%>
+
                 <% for (i=0;i<todoList.length;i++) {%>
-                    <form action="/content" method="POST">
-                    <a href="/content" class="list-group-item list-group-item-action todo" onclick=<%=test(this.i)%>>
-                        <%=locals.todoList[i].title %>
-                    </a>
+                    <form class="text-center" action="/content" method="POST">
+                        <label for="value"><%=locals.todoList[i].title %></label>
+                        <input type="submit" value=<%= i%> aria-label="default input example" class="list-group-item list-group-item-action todo" name="value"></input>
                       </form>
                     <%}} %>
 
-                        <a href="?" class="list-group-item list-group-item-action">First Todo made</a>
-                        <a href="?" class="list-group-item list-group-item-action">Second Todo made ect.</a>
+                        <!-- <a href="?" class="list-group-item list-group-item-action">First Todo made</a>
+                        <a href="?" class="list-group-item list-group-item-action">Second Todo made ect.</a> -->
         </div>
     </div>
-
+    <!-- <script>
+        function callHelperTest() {
+            fetch("/helper_test");
+        }
+        </script> -->
 </body>
 
 

@@ -25,14 +25,14 @@ app.get("/", (req, res) => {
     if (todoList.length === 0) {
         res.render("index.ejs");
     } else {
-        res.render("index.ejs", { todoList: todoList, test: test });
+        res.render("index.ejs", { todoList: todoList});
     }
 });
 
-app.get(`/content`, (req, res) => {
-    // let respose = req.body;
-    // console.log(this);
-    res.render("./components/content.ejs", { todoList: todoList, test: test, tempval: tempval })
+app.post(`/content`, (req, res) => {
+    tempval = req.body.value;
+    console.log(tempval);
+    res.render("./components/content.ejs", { todoList: todoList, tempval: tempval })
 });
 
 // Need to work on getting a list of all todos route
@@ -46,7 +46,7 @@ app.post("/create", (req, res) => {
     todoList.push(newTodo);
     // console.log(todoList);
     // console.log(todoList[0].title)
-    res.render("index.ejs", { todoList: todoList, test: test });
+    res.render("index.ejs", { todoList: todoList });
 
 });
 
@@ -63,8 +63,3 @@ app.delete("/todo/code", (req, res) => {
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
 });
-
-function test(e) {
-    tempval = e;
-    console.log(tempval);
-};
