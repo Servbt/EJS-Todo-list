@@ -1,0 +1,19 @@
+<body class="container">
+    <div class="row">
+        <div class="col-5 pt-5">
+            <%- include("components/sidebar.ejs") %>
+
+        </div>
+        <div class="col-7 pt-5">
+            <div>
+                <% if (locals.todoList) {%>
+                    <p><%- locals.todoList[locals.tempval].html() %> </p>
+
+                        <%} %>
+            </div>
+            <div class="text-center">
+                <%- include("components/footer.ejs") %>
+            </div>
+        </div>
+    </div>
+</body>

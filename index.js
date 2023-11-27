@@ -29,10 +29,11 @@ app.get("/", (req, res) => {
     }
 });
 
+// route for clicking a todo created on the sidebar from the form.ejs functionality
 app.post(`/content`, (req, res) => {
     tempval = req.body.value;
     console.log(tempval);
-    res.render("./components/content.ejs", { todoList: todoList, tempval: tempval })
+    res.render("content.ejs", { todoList: todoList, tempval: tempval })
 });
 
 // Need to work on getting a list of all todos route
