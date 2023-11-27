@@ -36,9 +36,9 @@ app.post(`/content`, (req, res) => {
     res.render("content.ejs", { todoList: todoList, tempval: tempval })
 });
 
-// Need to work on getting a list of all todos route
+// this is the route for getting all todos to appear on the page
 app.get("/allTodos", (req, res) => {
-    res.render("index.ejs", { todoList: todoList });
+    res.render("allTodos.ejs", { todoList: todoList });
 });
 
 // adds todo to list to array so that sidebar can access it
