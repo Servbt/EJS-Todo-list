@@ -34,10 +34,16 @@
             <% if (locals.todoList) {%>
 
                 <% for (i=0;i<todoList.length;i++) {%>
-                    <form class="text-center" action="/content" method="POST">
-                        <label for="value"><%=locals.todoList[i].title %></label>
-                        <input type="submit" value=<%= i%> aria-label="default input example" class="list-group-item list-group-item-action todo" name="value"></input>
-                      </form>
+                    <div>
+                        <form class="text-center" action="/content" method="POST">
+                            <label for="value"><%=locals.todoList[i].title %></label>
+                            <input type="submit" value=<%= i%> aria-label="default input example" class="list-group-item list-group-item-action todo" name="value"></input>
+                          </form>
+                          <form class="text-center" action="/edit-todo" method="POST">
+                            <label for="value"><%=locals.todoList[i].title %></label>
+                            <input type="submit" value=<%= i%> aria-label="default input example" class="list-group-item list-group-item-action todo bg-dark" name="value"></input>
+                          </form>
+                    </div>
                     <%}} %>
 
                         <!-- <a href="?" class="list-group-item list-group-item-action">First Todo made</a>

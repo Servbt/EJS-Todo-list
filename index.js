@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
     if (todoList.length === 0) {
         res.render("index.ejs");
     } else {
-        res.render("index.ejs", { todoList: todoList});
+        res.render("index.ejs", { todoList: todoList });
     }
 });
 
@@ -51,9 +51,17 @@ app.post("/create", (req, res) => {
 
 });
 
-app.put("/todo/code", (req, res) => {
-    console.log("Hello World");
-    res.sendStatus(200);
+// Pagination for Todo editing, there is functionality inside to send user to route below
+app.post("/edit-todo", (req, res) => {
+    tempval = req.body.value;
+    
+    res.render("editTodo.ejs", { todoList: todoList, tempval: tempval });
+});
+
+app.put("/post-edit", (req, res) => {
+    let response = req.body
+    res.render("content.ejs", { todoList: todoList, tempval: tempval });
+
 });
 
 app.delete("/todo/code", (req, res) => {
