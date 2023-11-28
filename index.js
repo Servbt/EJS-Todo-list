@@ -32,7 +32,7 @@ app.get("/", (req, res) => {
 // route for clicking a todo created on the sidebar from the form.ejs functionality
 app.post(`/content`, (req, res) => {
     tempval = req.body.value;
-    console.log(tempval);
+    // console.log(tempval);
     res.render("content.ejs", { todoList: todoList, tempval: tempval })
 });
 
@@ -54,13 +54,17 @@ app.post("/create", (req, res) => {
 // Pagination for Todo editing, there is functionality inside to send user to route below
 app.post("/edit-todo", (req, res) => {
     tempval = req.body.value;
-    
+
     res.render("editTodo.ejs", { todoList: todoList, tempval: tempval });
 });
 
-app.put("/post-edit", (req, res) => {
-    let response = req.body
+app.post("/postedit", (req, res) => {
+    let response = req.body;
+    console.log(response);
+    todoList[tempval].title = response.title;
+    todoList[tempval].content = response.content;
     res.render("content.ejs", { todoList: todoList, tempval: tempval });
+    // res.send('Form submitted successfully!');
 
 });
 

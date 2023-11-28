@@ -1,0 +1,14 @@
+<body>
+    <% if (locals.todoList) {%>
+        <!-- This block of html for grabbing the todo selected and allow the user to edit the content inside -->
+    <form class="text-center" action="/postedit" method="POST">
+        <label for="title" class="form-label">Edit Title</label>
+        <input class="form-control" type="text" value=<%= locals.todoList[locals.tempval].title %> aria-label="default input example"
+            name="title">
+        <label for="content" class="form-label">Edit Todo Content</label>
+        <textarea type="text" class="form-control" id="exampleFormControlTextarea1" rows="10" required
+            name="content"><%= locals.todoList[tempval].content %></textarea>
+        <input class="btn btn-success btn-lg mt-3" type="submit" value="Edit Todo">
+    </form>
+    <% } %>
+</body>
