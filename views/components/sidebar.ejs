@@ -18,11 +18,12 @@
 
     <div>
         <div>
-            <form class="form-floating">
-                <input type="email" class="form-control" id="floatingInputValue"
-                    placeholder="Input is inside its own div" value="Input is inside its own div">
-                <label for="floatingInputValue">Input is inside its own div</label>
+            <% if (locals.todoList) {%>
+            <form class="form" action="/find-todo" method="POST">
+                <label for="string" class="form-label"></label>
+                <input class="form-control" type="text" placeholder="Search for a Todo" aria-label="default input example" name="string">
             </form>
+            <%}%>
         </div>
 
         <div class="list-group">
@@ -63,11 +64,6 @@
                         <!-- <a href="?" class="list-group-item list-group-item-action">Second Todo made ect.</a> -->
         </div>
     </div>
-    <!-- <script>
-        function callHelperTest() {
-            fetch("/helper_test");
-        }
-        </script> -->
 </body>
 
 
