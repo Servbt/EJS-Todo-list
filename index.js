@@ -39,7 +39,11 @@ app.post(`/content`, (req, res) => {
 
 // this is the route for getting all todos to appear on the page
 app.get("/allTodos", (req, res) => {
-    res.render("allTodos.ejs", { todoList: todoList });
+    if (todoList.length === 0) {
+        res.render("index.ejs");
+    } else {
+        res.render("allTodos.ejs", { todoList: todoList });
+    }
 });
 
 // adds todo to list to array so that sidebar can access it
@@ -55,15 +59,18 @@ app.post("/create", (req, res) => {
 // Pagination for Todo editing, there is functionality inside to send user to the todo editing route below
 app.post("/edit-todo", (req, res) => {
     tempval = req.body.value;
-    res.render("editTodo.ejs", { todoList: todoList, tempval: tempval });
+    let titleFix = todoList[tempval].title;
+    // console.log("this is the title in the /edit-todo route: " + titleFix);
+    res.render("editTodo.ejs", { todoList: todoList, tempval: tempval, titleFix: titleFix });
 });
 
 // route with functionality for editing todos
 app.post("/postedit", (req, res) => {
-    let response = req.body;
-    console.log(response);
-    todoList[tempval].title = response.title;
-    todoList[tempval].content = response.content;
+    let edit = req.body;
+    console.log("this is the edit title " + edit.title);
+    // console.log("this is the current todo content: " + todoList[tempval].content);
+    todoList[tempval].title = edit.title;
+    todoList[tempval].content = edit.content;
     res.render("content.ejs", { todoList: todoList, tempval: tempval });
     // res.send('Form submitted successfully!');
 
@@ -77,11 +84,13 @@ app.post("/find-todo", (req, res) => {
             if (todoList[i].title === newstring) {
                 return i;
             } else {
+                // This handles any search that does not exist
                 return res.render("failToFind.ejs", { todoList: todoList, tempval: tempval });
             }
         }
     }
     console.log(checkstring(newstring));
+    // this line gets the index we want for the array
     tempval = checkstring(newstring);
     res.render("content.ejs", { todoList: todoList, tempval: tempval });
 });
@@ -89,7 +98,12 @@ app.post("/find-todo", (req, res) => {
 // route with functionality for deleting todos, just splices temp data pushed in array made from the create-todo route
 app.post("/delete-todo", (req, res) => {
     todoList.splice(tempval, 1);
-    res.render("index.ejs", { todoList: todoList, tempval: tempval });
+    // alternate pagination if there are no todos available
+    if (todoList.length === 0) {
+        res.render("index.ejs");
+    } else {
+        res.render("index.ejs", { todoList: todoList, tempval: tempval });
+    }
 
 });
 
