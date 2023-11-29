@@ -51,13 +51,13 @@ app.post("/create", (req, res) => {
 
 });
 
-// Pagination for Todo editing, there is functionality inside to send user to route below
+// Pagination for Todo editing, there is functionality inside to send user to the todo editing route below
 app.post("/edit-todo", (req, res) => {
     tempval = req.body.value;
-
     res.render("editTodo.ejs", { todoList: todoList, tempval: tempval });
 });
 
+// route with functionality for editing todos
 app.post("/postedit", (req, res) => {
     let response = req.body;
     console.log(response);
@@ -68,9 +68,11 @@ app.post("/postedit", (req, res) => {
 
 });
 
-app.delete("/todo/code", (req, res) => {
-    console.log("Hello World");
-    res.sendStatus(200);
+// route with functionality for deleting todos, just splices temp data pushed in array made from the create-todo route
+app.post("/delete-todo", (req, res) => {
+    todoList.splice(tempval,1);
+    res.render("index.ejs", { todoList: todoList, tempval: tempval });
+
 });
 
 app.listen(port, () => {

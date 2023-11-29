@@ -35,19 +35,32 @@
 
                 <% for (i=0;i<todoList.length;i++) {%>
                     <div>
+                        <!-- This the html route to View a todo -->
                         <form class="text-center" action="/content" method="POST">
-                            <label for="value"><%=locals.todoList[i].title %></label>
-                            <input type="submit" value=<%= i%> aria-label="default input example" class="list-group-item list-group-item-action todo" name="value"></input>
-                          </form>
-                          <form class="text-center" action="/edit-todo" method="POST">
-                            <label for="value"><%=locals.todoList[i].title %></label>
-                            <input type="submit" value=<%= i%> aria-label="default input example" class="list-group-item list-group-item-action todo bg-dark" name="value"></input>
-                          </form>
+                            <label for="value">
+                                <%=locals.todoList[i].title %>
+                            </label>
+                            <input type="submit" value=<%=i%> aria-label="default input example" class="list-group-item
+                            list-group-item-action todo" name="value"></input>
+                        </form>
+                        <!-- This the html route to Edit a todo -->
+                        <form class="text-center" action="/edit-todo" method="POST">
+                            <label for="value">
+                            </label>
+                            <input type="submit" value=<%=i%> aria-label="default input example" class="list-group-item
+                            list-group-item-action todo bg-dark" name="value">Edit Todo</input>
+                        </form>
+                        <!-- This the html route to Delete a todo -->
+                        <form class="text-center" action="/delete-todo" method="POST">
+                            <label for="value">
+                            </label>
+                            <input type="submit" value=<%=i%> aria-label="default input example" class="list-group-item
+                            list-group-item-action todo bg-danger" name="value">Delete Todo</input>
+                        </form>
                     </div>
                     <%}} %>
 
-                        <!-- <a href="?" class="list-group-item list-group-item-action">First Todo made</a>
-                        <a href="?" class="list-group-item list-group-item-action">Second Todo made ect.</a> -->
+                        <!-- <a href="?" class="list-group-item list-group-item-action">Second Todo made ect.</a> -->
         </div>
     </div>
     <!-- <script>
