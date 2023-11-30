@@ -1,14 +1,15 @@
 <body>
     <% if (locals.todoList) {%>
+  <h1 class="text-center pt-1 make-header">Edit Your Todo Here!</h1>
         <!-- This block of html for grabbing the todo selected and allow the user to edit the content inside -->
-    <form class="text-center" action="/postedit" method="POST">
-        <label for="title" class="form-label">Edit Title</label>
-        <input class="form-control" type="text" value="<%= titleFix %>" aria-label="default input example"
+    <form class="text-center pt-2 edit-form-body border border-5 rounded-5" action="/post-edit" method="POST">
+        <label for="title" class="form-label cust-label">Title</label>
+        <input class="form-control border border-1 rounded-0 myText" type="text" value="<%= titleFix %>" aria-label="default input example"
             name="title">
-        <label for="content" class="form-label">Edit Todo Content</label>
-        <textarea type="text" class="form-control" id="exampleFormControlTextarea1" rows="10" required
+        <label for="content" class="form-label cust-label pt-1"> Content</label>
+        <textarea type="text" class="form-control border border-1 rounded-0 myText" id="exampleFormControlTextarea1" rows="10" required
             name="content"><%= locals.todoList[tempval].content %></textarea>
-        <input class="btn btn-success btn-lg mt-3" type="submit" value="Edit Todo">
+        <input class="btn btn-danger btn-lg my-3 edit-button" type="submit" value="Edit Todo">
     </form>
     <% } %>
 </body>

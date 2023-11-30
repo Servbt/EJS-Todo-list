@@ -1,3 +1,44 @@
-/* body {
-    background-color: rgb(1, 1, 1);
-} */
+:root {
+  --mySolidBlue: #5AA9E6;
+  --myLightBlue: #7FC8F8;
+  --myWhite: #F9F9F9;
+  --myYellow: #FFE45E;
+  --myPink: hsl(342, 100%, 69%);
+}
+
+/* Form.ejs/Form-edit.ejs */
+.make-header {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: var(--myWhite);
+}
+
+.cust-label {
+  font-style: italic;
+}
+
+.whole-body {
+  background-color: var(--myLightBlue);
+}
+
+.form-body {
+  background-color: var(--myYellow);
+}
+
+.edit-form-body {
+  background-color: var(--myYellow);
+}
+
+.create-button {
+  background-color: var(--mySolidBlue);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.edit-button {
+  background-color: var(--myPink);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.myText {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+/* Form.ejs/Form-edit.ejs */

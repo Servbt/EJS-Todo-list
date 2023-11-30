@@ -1,12 +1,12 @@
-<body>
+<body class="">
 
-  <h1 class="text-center">This is The Title inside the content.ejs file</h1>
-  <form class="text-center" action="/create" method="POST">
-    <label for="title" class="form-label">Todo Title</label>
-    <input class="form-control" type="text" placeholder="Default input" aria-label="default input example" name="title">
-    <label for="content" class="form-label">Example textarea</label>
-    <textarea type="text" class="form-control" id="exampleFormControlTextarea1" rows="10 " required name="content"></textarea>
-    <input class="btn btn-success btn-lg mt-3" type="submit" value="Create Todo">
+  <h1 class="text-center pt-1 make-header">Make Your Todo Here!</h1>
+  <form class="text-center pt-2 form-body border border-5 rounded-5" action="/create" method="POST">
+    <label for="title" class="form-label cust-label ">Title</label>
+    <input class="form-control border border-1 rounded-0 myText" type="text" placeholder="Default input" aria-label="default input example" name="title">
+    <label for="content" class="form-label cust-label pt-1">Content</label>
+    <textarea type="text" class="form-control border border-1 rounded-0 myText" id="exampleFormControlTextarea1" rows="10 " required name="content"></textarea>
+    <input class="btn btn-primary btn-lg my-3 create-button " type="submit" value="Create Todo">
   </form>
 
 

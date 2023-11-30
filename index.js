@@ -38,7 +38,7 @@ app.post(`/content`, (req, res) => {
 });
 
 // this is the route for getting all todos to appear on the page
-app.get("/allTodos", (req, res) => {
+app.get("/all-todos", (req, res) => {
     if (todoList.length === 0) {
         res.render("index.ejs");
     } else {
@@ -65,7 +65,7 @@ app.post("/edit-todo", (req, res) => {
 });
 
 // route with functionality for editing todos
-app.post("/postedit", (req, res) => {
+app.post("/post-edit", (req, res) => {
     let edit = req.body;
     console.log("this is the edit title " + edit.title);
     // console.log("this is the current todo content: " + todoList[tempval].content);
