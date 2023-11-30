@@ -1,10 +1,10 @@
 <body class="container whole-body">
     <div class="row">
-        <div class="col-5 pt-5">
+        <div class="col-5 pt-5 sidebar">
             <%- include("components/sidebar.ejs") %>
 
         </div>
-        <div class="col-7 pt-5 ">
+        <div class="col-7 pt-5 content">
             <div class="all-todos-container text-center border border-5 rounded-5 p-5 make-header">
                 <% if (locals.todoList) {%>
                     <p><%- locals.todoList[locals.tempval].html() %> </p>

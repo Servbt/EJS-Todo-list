@@ -28,6 +28,10 @@ There are many things that I'd likely implement to either this/or future project
 <br>
 
 ![Image 2](./public/Images/Capture2.PNG)
+<br>
+
+![Image 2](./public/Images/Capture-mobile.PNG)
+
 
 
 

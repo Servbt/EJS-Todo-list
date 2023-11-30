@@ -94,3 +94,18 @@
 .footer-cust{
   font-size: 10px;
 }
+
+
+/* Mobile Media Query */
+
+@media (max-width: 576px) {
+.sidebar {
+  width: 100%;
+}
+
+.content {
+  width: 100%;
+}
+
+}
+
