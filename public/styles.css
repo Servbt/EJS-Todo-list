@@ -12,6 +12,11 @@
   color: var(--myWhite);
 }
 
+.make-header-fail {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: var(--myPink);
+}
+
 .myText {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -53,12 +58,10 @@
 
 .hidden-number {
   color: transparent;
-  /* Set the font color to transparent */
 }
 
 .hidden-number:hover {
   color: transparent;
-  /* Set the font color to transparent */
 }
 
 .todo-delete {
@@ -71,4 +74,23 @@
 
 .todo-edit {
   background-color: var(--myYellow);
+}
+
+/* ---- */
+
+/* allTodos.ejs/content.ejs specific styling */
+
+.all-todos-container {
+  background-color: var(--mySolidBlue);
+  margin-top: 16%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+
+
+/* footer.ejs */
+
+.footer-cust{
+  font-size: 10px;
 }

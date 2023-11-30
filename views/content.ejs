@@ -4,14 +4,14 @@
             <%- include("components/sidebar.ejs") %>
 
         </div>
-        <div class="col-7 pt-5">
-            <div>
+        <div class="col-7 pt-5 ">
+            <div class="all-todos-container text-center border border-5 rounded-5 p-5 make-header">
                 <% if (locals.todoList) {%>
                     <p><%- locals.todoList[locals.tempval].html() %> </p>
 
                         <%} %>
             </div>
-            <div class="text-center">
+            <div class="text-center pt-3">
                 <%- include("components/footer.ejs") %>
             </div>
         </div>
