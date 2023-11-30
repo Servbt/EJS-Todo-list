@@ -14,37 +14,40 @@
 </head>
 
 <body>
-    <h1>Todos:</h1>
+    <h1 class="make-header pb-1">Todos:</h1>
 
     <div>
         <div>
             <% if (locals.todoList) {%>
                 <form class="form" action="/find-todo" method="POST">
                     <label for="string" class="form-label"></label>
-                    <input class="form-control" type="text" placeholder="Search Todo Title"
+                    <input class="form-control myText" type="text" placeholder="Search Todo Title"
                         aria-label="default input example" name="string">
                 </form>
                 <%}%>
         </div>
 
         <div class="list-group">
-            <a href="/" class="list-group-item list-group-item-action active" aria-current="true">
+            <a href="/" class="list-group-item list-group-item-action active cust-label create-button"
+                aria-current="true">
                 Link to Todo Create page
             </a>
-            <a href="/all-todos" class="list-group-item list-group-item-action">Link To see all Todos</a>
+            <a href="/all-todos"
+                class="list-group-item list-group-item-action border border-dark rounded-3 rounded-top-0 btn create-button">Link
+                To see all Todos</a>
             <!-- The Code below Loops through the Array passed and Makes titles/links for each Todo -->
             <% if (locals.todoList) {%>
 
                 <% for (i=0;i<todoList.length;i++) {%>
-                    <div class="container">
+                    <div class="container todo-list border border-2 rounded-4 mt-5 pb-3">
 
-                        <div class="row pt-5">
+                        <div class="row pt-5 ">
                             <!-- This the html route to View a todo -->
                             <form class="text-center col" action="/content" method="POST">
                                 <input type="submit" value=<%=i%> aria-label="default input example"
                                 class="list-group-item
-                                list-group-item-action todo col" name="value"></input>
-                                <label for="value" >
+                                list-group-item-action todo-view col hidden-number todo-view btn" name="value"></input>
+                                <label for="value" class="make-header">
                                     <%=locals.todoList[i].title %>
                                 </label>
                             </form>
@@ -52,16 +55,16 @@
                             <form class="text-center col" action="/edit-todo" method="POST">
                                 <input type="submit" value=<%=i%> aria-label="default input example"
                                 class="list-group-item
-                                list-group-item-action todo" name="value"></input>
-                                <label for="value">Edit
+                                list-group-item-action hidden-number todo-edit btn" name="value"></input>
+                                <label for="value" class="make-header">Edit
                                 </label>
                             </form>
                             <!-- This the html route to Delete a todo -->
                             <form class="text-center col" action="/delete-todo" method="POST">
                                 <input type="submit" value=<%=i%> aria-label="default input example"
                                 class="list-group-item
-                                list-group-item-action todo" name="value"></input>
-                                <label for="value">Remove
+                                list-group-item-action hidden-number todo-delete btn" name="value"></input>
+                                <label for="value" class="make-header">Remove
                                 </label>
                             </form>
                         </div>

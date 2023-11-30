@@ -6,10 +6,14 @@
   --myPink: hsl(342, 100%, 69%);
 }
 
-/* Form.ejs/Form-edit.ejs */
+/* Form/Form-edit/globalfonts styling */
 .make-header {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: var(--myWhite);
+}
+
+.myText {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .cust-label {
@@ -38,7 +42,33 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.myText {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+/* ---- */
+
+/*  sidebar.ejs specific styling */
+
+.todo-list {
+  background-color: var(--mySolidBlue);
 }
-/* Form.ejs/Form-edit.ejs */
+
+.hidden-number {
+  color: transparent;
+  /* Set the font color to transparent */
+}
+
+.hidden-number:hover {
+  color: transparent;
+  /* Set the font color to transparent */
+}
+
+.todo-delete {
+  background-color: var(--myPink);
+}
+
+.todo-view {
+  background-color: var(--myLightBlue);
+}
+
+.todo-edit {
+  background-color: var(--myYellow);
+}
