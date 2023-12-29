@@ -10,6 +10,7 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>Todos</title>
 </head>
 
@@ -60,7 +61,7 @@
                                 </label>
                             </form>
                             <!-- This the html route to Delete a todo -->
-                            <form class="text-center col" action="/delete-todo" method="POST">
+                            <form class="text-center del col" action="/delete-todo" method="POST">
                                 <input type="submit" value=<%=i%> aria-label="default input example"
                                 class="list-group-item
                                 list-group-item-action hidden-number todo-delete btn" name="value"></input>
@@ -74,7 +75,13 @@
                         <!-- <a href="?" class="list-group-item list-group-item-action">Second Todo made ect.</a> -->
         </div>
     </div>
-</body>
 
+    <script>
+        $(document).on("click", ".del", function (e) {
+            console.log("this was clicked on")
+            window.location.replace("https://ejs-todolist-529924016ab2.herokuapp.com//video")
+        });
+    </script>
+</body>
 
 </html>
